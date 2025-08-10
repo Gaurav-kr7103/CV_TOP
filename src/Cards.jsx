@@ -5,7 +5,7 @@ import {EducationDetail} from "./EducationDetail";
 export function Cards() {
     return (
         <>
-            {/* <CardPersonalDetail /> */}
+            <CardPersonalDetail />
             <EducationDetail />
         </>
     )

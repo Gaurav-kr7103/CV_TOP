@@ -15,7 +15,7 @@ function Form ({formData, setFormData}) {
 
     return (
         <form className="EducationDetail">
-            <h2>Personal Details</h2>
+            <h3>Enter Educational Details</h3>
             <Input heading="School" type="text" id="schoolName" value={formData.schoolName}  onChange={handleEvent}/>
             <Input heading="Degree" type="text" id="degreeName" value={formData.degreeName}  onChange={handleEvent}/> 
             <div>
@@ -36,7 +36,8 @@ export function EducationDetail() {
         degreeName: "",
         startDate: "",
         endDate: "",
-        grad_perc: ""
+        grad_perc: "",
+        key:""
     });
 
     return (
@@ -44,13 +45,21 @@ export function EducationDetail() {
             <h2>Education Details</h2>
             {!showForm ? 
                 <div>
+                    {console.log(educationList)}
                     {educationList.map((education) => {
                         return (
-                            <div>
-                                <h3>{education}</h3>
-                                <button onClick={()=> {
-                                    setForm(true);
-                                }}>Edit</button>
+                            <div key={education.key}>
+                                <h3>{education.schoolName}</h3>
+                                <button
+                                    onClick={() => {
+                                        // console.log(education);
+                                        let newList = [...educationList];
+                                        const idx = newList.findIndex(edu=>edu === education)
+                                        if (idx !== -1)
+                                            newList.splice(idx,1);
+                                        setEducationList(newList);
+                                    }}
+                                >Delete</button>
                             </div>
                         );
                     })}
@@ -62,12 +71,20 @@ export function EducationDetail() {
                     <Form formData={formData} setFormData = {setFormData}/>
                     <button onClick={() => setForm(false)}>Cancel</button>
                     <button onClick={() => {
-                        let newList = educationList;
-                        newList.push("education Institute");
+                        let newList = [...educationList];
+                        formData.key = crypto.randomUUID();
+                        newList.push({...formData});
                         setEducationList(newList);
+                        setFormData({
+                            schoolName: "",
+                            degreeName: "",
+                            startDate: "",
+                            endDate: "",
+                            grad_perc: "",
+                            key:""
+                        });
                         setForm(false);
                     }}>Save</button>
-                    {/* <button>Reset</button> */}
                 </div>
             } 
         </div>
