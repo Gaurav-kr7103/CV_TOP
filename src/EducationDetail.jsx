@@ -27,9 +27,9 @@ function Form ({formData, setFormData}) {
     )
 }
 
-export function EducationDetail() {
+export function EducationDetail( {educationList, setEducationList} ) {
 
-    const [educationList, setEducationList] = useState([]);
+    // const [educationList, setEducationList] = useState([]);
     const [showForm, setForm] = useState(false);
     const [formData, setFormData] = useState ({
         schoolName: "",

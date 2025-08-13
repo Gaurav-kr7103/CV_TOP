@@ -1,12 +1,11 @@
-import { useState } from "react"
 import { Input } from "./freqUsedComponents/Input"
 
-export function CardPersonalDetail() {
-    const [formData,setFormData] = useState({
-        fname : "",
-        email : "",
-        tel : "",
-    })
+export function CardPersonalDetail( {formData, setFormData} ) {
+    // const [formData,setFormData] = useState({
+    //     fname : "",
+    //     email : "",
+    //     tel : "",
+    // })
 
     function handleEvent (event) {
         const { id, value } = event.target;
