@@ -1,31 +1,200 @@
+:root {
+  /* Color palette for grading */
+  --primary-color: #2c3e50;      /* Dark blue-gray for headings */
+  --secondary-color: #34495e;    /* Slightly lighter for subheadings */
+  --accent-color: #3498db;       /* Blue for highlights */
+  --bg-color: #f6f6f6;           /* Light gray background */
+  --card-bg: #fdfdfd;            /* White for card sections */
+  --text-color: #2c3e50;         /* Default text */
+}
+
 * {
-  outline: 2px solid red;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #root {
   margin: 0;
   padding: 0;
-  text-align: center;
+  background-color: var(--bg-color);
 }
 
 .body {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   gap: 2em;
   padding: 2em;
 }
 
+
 .card-details {
-  background-color: blue;
+  background-color: var(--card-bg);
   flex: 1;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .preview {
-  flex : 1;
+  flex: 1;
+  background-color: var(--card-bg);
+  padding: 1.5em 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-.header {
-  outline: 2px solid white;
 
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 1em;
+  margin-bottom: 1.5em;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.header > div {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 0.5em;
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+}
+
+/* ===== SECTION HEADINGS ===== */
+.education h2,
+.experience h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1em;
+  color: var(--primary-color);
+  border-left: 4px solid var(--accent-color);
+  padding-left: 0.5em;
+}
+
+/* ===== EDUCATION & EXPERIENCE CARDS ===== */
+.education_per,
+.exp_per {
+  background-color: var(--bg-color);
+  border-radius: 6px;
+  padding: 1em;
+  margin-bottom: 1em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.education_per:hover,
+.exp_per:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.education_per > div:first-child,
+.exp_per > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-bottom: 0.5em;
+  color: var(--secondary-color);
+}
+
+.education_per > div:last-child,
+.exp_per > div:last-child {
+  font-weight: bold;
+  color: var(--secondary-color);
+  line-height: 1.4;
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+  .header > div {
+    flex-direction: column;
+    gap: 0.3em;
+  }
+
+  .education_per > div:first-child,
+  .exp_per > div:first-child {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
+
+
+.card-details {
+  background-color: #f9f9fb; /* soft light background */
+  color: #1a1a1a; /* almost black text for high contrast */
+  flex: 1;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.card-details h2 {
+  margin-bottom: 1rem;
+  color: #2d2d2d;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.card-details form,
+.educationDetail,
+.experienceDetail {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-details label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.card-details input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.card-details button {
+  background-color: #4f46e5; /* deep blue */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card-details button:hover {
+  background-color: #4338ca;
+}
+
+.educationDetail > div,
+.experienceDetail > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.educationDetail h3,
+.experienceDetail h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
 }
