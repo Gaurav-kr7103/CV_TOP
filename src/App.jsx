@@ -1,5 +1,6 @@
 import './App.css';
 import {Cards} from "./Cards";
+import { Preview } from './Preview';
 import { useState } from 'react';
 
 function App() {
@@ -12,13 +13,17 @@ function App() {
     const [expList, setExpList] = useState([]);
 
   return (
-    <>
-      <Cards 
+    <div className='body'>
+      <Cards
       formData={formData} setFormData={setFormData}
       educationList={educationList} setEducationList={setEducationList}
       expList={expList} setExpList={setExpList} />
-      {/* Hello World! */}
-    </>
+      
+      <Preview className = "preview-resume" 
+      formData={formData}
+      educationList={educationList}
+      expList={expList} />
+    </div>
   )
 }
 

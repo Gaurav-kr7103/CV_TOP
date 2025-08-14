@@ -43,8 +43,8 @@ export function ExperienceDetail( {expList, setExpList} ) {
     });
 
     return (
-        <div>
-            <h2>Experience Detail</h2>
+        <div className="experienceDetail">
+            <h2>Experience Details</h2>
             {!showForm ? 
                 <div>
                     {expList.map((exp) => {

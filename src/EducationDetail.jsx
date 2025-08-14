@@ -41,7 +41,7 @@ export function EducationDetail( {educationList, setEducationList} ) {
     });
 
     return (
-        <div>
+        <div className="educationDetail">
             <h2>Education Details</h2>
             {!showForm ? 
                 <div>
