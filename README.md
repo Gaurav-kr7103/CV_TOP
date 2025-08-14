@@ -1,13 +1,47 @@
-# React + Vite
-Project Preview => cvapplication-58poghc0w-gaurav-kr7103s-projects.vercel.app
+# CV Maker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic CV/Resume builder built with **React** as part of [The Odin Project](https://www.theodinproject.com/) curriculum.  
+This project allows users to input their personal details, education, work experience, and skills to generate a live preview of their resume.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- **Live Preview**: Instantly see changes to your CV while typing.
+- **Form-based Input**: Structured sections for personal details, education, and experience.
+- **Modular Components**: Built using reusable React components.
+- **Styling**: Simple and responsive UI.
+- **Version Control**: Managed with Git and GitHub.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+- **React** – Component-based UI development
+- **JavaScript (ES6+)** – Core language
+- **CSS** – For styling
+- **Webpack** – Modular bundling
+- **Jest** – Unit testing
+- **HTML5**
+- **Git/GitHub** – Version control
+- **Linux** – Development environment
+
+---
+
+## 📂 Project Structure
+CV_TOP/<br>
+├── src/<br>
+│ ├── components/ # React components<br>
+│ ├── styles/ # CSS styling<br>
+│ └── App.js # Main application entry<br>
+├── public/ # Static files<br>
+├── package.json<br>
+└── README.md<br>
+
+
+## Install Dependencies
+npm install
+
+## Run for devlopment server
+npm run dev
+
+## Run for production server
+npm run build
