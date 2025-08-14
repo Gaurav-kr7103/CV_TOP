@@ -1,4 +1,3 @@
-import "./Cards.css";
 import {CardPersonalDetail} from "./CardPersonalDetail";
 import {EducationDetail} from "./EducationDetail";
 import { ExperienceDetail } from "./ExperienceDetail";
