@@ -1,7 +1,8 @@
 # CV Maker
 
 A dynamic CV/Resume builder built with **React** as part of [The Odin Project](https://www.theodinproject.com/) curriculum.  
-This project allows users to input their personal details, education, work experience, and skills to generate a live preview of their resume.
+This project allows users to input their personal details, education, work experience, and skills to generate a live preview of their resume.<br>
+Live Preview => https://cvapplication-eta.vercel.app/
 
 ---
 
